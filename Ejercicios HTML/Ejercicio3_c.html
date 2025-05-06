@@ -1,0 +1,37 @@
+<!--
+[A.04] Fotos
+Crear tres páginas con una foto cada una (foto1.jpg, foto2.jpg y foto3.jpg) luego, al ser presionada, avanzar
+a la siguiente página, es decir de la pagina1.html llamar a la pagina2.html, de la pagina2.html pasar a la
+pagina3.html y de ésta a la primera.
+Las imágenes se encuentran en una carpeta llamada imágenes que depende directamente de la raíz del sitio.
+-->
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <!--Establece el juego de caracteres que utilizará el navegador-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--Establece el área de visualización de la página en el navegador -->
+    <meta name="application-name" content="Introducción a HTML 5" />
+    <!--Define el nombre de la aplicación de la cual forma parte el documento-->
+    <meta name="author" content="Agustina Seggiaro" />
+    <!--Establece el nombre del autor del documento-->
+    <meta name="description" content="" />
+    <!--Descripción del documento. Es utilizada por los motores de búsquedas.-->
+    <meta name="generator" content="" />
+    <!--Especifica el nombre del programa con el que se ha creado el documento.-->
+    <meta name="keywords" content="ejemplos, programación, html 5, etc." />
+    <!--Serie de términos o palabras que sirven para establecer categorías -->
+    <title>Ejercicio 4 - Fotos</title>
+  </head>
+  <body>
+    <div>
+        <h1>Imagen 3</h1>
+        <img src=".\Fotos_hipervinculo\zeus-street-style-graphic-designtextile-600nw-2347369247.webp" width="200px" height=auto usemap="#imagen3" alt="Imagen" />
+        <map name="imagen3">
+            <area shape="rect" coords="0,25,200,200" alt="pagina1" href="Ejercicio3.html">
+        </map>
+
+    </div>
+  </body>
+</html>

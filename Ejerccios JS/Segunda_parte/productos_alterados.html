@@ -1,0 +1,70 @@
+<!--[D.04] Agregando y quitando propiedades
+Crear el documento HTML productos_alterados.html y realizar las siguientes tareas:
+1. Vincular el archivo productos.js realizado en el punto [D.02].
+2. Agregar en la etiqueta <script type=”text/javascript”> el código necesario para:
+a. agregar la propiedad moneda (con el valor usd) a todos los productos cuyo precio sea impar.
+b. mostrar todos los productos (tener en cuenta que no todos tendrán la propiedad moneda).
+c. eliminar la propiedad fechaVencimiento a todos los productos cuyo precio sea par.
+d. mostrar todos los productos (tener en cuenta que no todos tendrán la propiedad moneda o la
+propiedad fechaVencimiento).
+Nota: Verificar su funcionamiento en la consola del navegador (F12). Utilizar el operador in y delete -->
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vinculacion productos.html </title>    
+</head>
+<body>
+    <div>
+        <!--VINCULAR A UN ARCHIVO JS-->
+        <script src ="Ejercicio_2.js"></script>    
+    </div>
+    <div>
+        <!--MODIFICAR UN ARCHIVO .JS-->
+        <script type="text/javascript">
+            console.log("--- DESDE HTML ----")
+            // A y B
+            producto.forEach(p =>{                
+                if (p.precio %2 !== 0){
+                    // AGREGAR PROPIDAD A UN JS
+                    p.moneda = "usd"; 
+                    //MOSTRAR POR KY
+                    let cadena = `${p.codigoDeBarra} - ${p.nombre} - ${p.precio} - ${p.fechaDeVencimiento} - ${p.moneda}.`;
+                    console.log(cadena);
+                    }                    
+                else{
+                    let cadena = `${p.codigoDeBarra} - ${p.nombre} - ${p.precio} - ${p.fechaDeVencimiento}.`;
+                    console.log(cadena);
+                }
+                
+            }
+            );
+            //C y D
+            console.log("-- Ejercicio D y E --")
+            producto.forEach(p =>{                
+                if (p.precio %2 == 0){
+                    // ELIMINAR PROPIEDAD A UN JS
+                    delete p.fechaDeVencimiento;                     
+                    } 
+                    //Utilizando operador IN                   
+                let cadena = `${p.codigoDeBarra} - ${p.nombre} - ${p.precio} `;    
+                if ("moneda" in p){
+                    cadena += `- ${p.moneda} `;
+                }
+                if ("fechaDeVencimiento" in p){
+                    cadena += `- ${p.fechaDeVencimiento} `;
+                }
+                console.log(cadena);
+                
+            }
+            );
+            
+            
+        </script>
+    </div>
+
+
+</body>

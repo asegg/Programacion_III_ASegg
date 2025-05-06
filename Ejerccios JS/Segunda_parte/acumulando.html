@@ -1,0 +1,46 @@
+<!--[D.05] Acumulando jotasones
+Crear un documento HTML (acumulando.html) y vincular el siguiente archivo: jotasones.js.
+Guardar el contenido del anterior archivo en el localStorage (jotasones), siempre y cuando, no se haya
+guardado previamente.
+Mostrar por consola y por alert si se guardó o se recuperó del localStorage. En todos los casos, mostrar por
+consola el contenido completo.
+Agregar un nuevo elemento a la colección tomando como valores el incremento en uno del último objeto
+recuperado.
+Informar por alert el valor del último id agregado.
+-->
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acumulador .html </title>    
+</head>
+<body>
+    <div>
+        <!--VINCULAR A UN ARCHIVO JS-->
+        <script src ="jotasones.js"></script>   
+    </div>
+    <div>
+        <script type ="text/javascript">
+            if (localStorage.getItem("jotasones") === null ){
+                //Guarda en localStorage, pero hay que convertirlo primero en texto
+                localStorage.setItem("jotasones", JSON.stringify(jotasones));
+                //Para leerlo uso getItem
+                const jotasonesGuardado = JSON.parse(localStorage.getItem("jotasones"));
+                console.log("Se guardó jotasones en el localStorage");
+                alert("Se guardó jotasones en el localStorage");
+            }
+            else{
+                console.log("Se RECUPERÓ jotasones en el localStorage");
+                alert("Se RECUPERÓ jotasones en el localStorage");
+            }
+            
+        </script>
+        
+        
+    </div>
+
+</body>
+</html>
