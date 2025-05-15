@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+    <html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Parcial Modelo</title>
+    </head>
+	<body>   
+        
+       <main class="conteiner">
+        <h1>Bienvenido a tu agenda</h1>
+        <form id = "formulario">
+            <label for = "nombreEvento">Nombre del Evento</label>
+            <input type="text" name = "nombreEvento" requered placeholder = "nombre del envento">
+
+            <label for = "fechaEvento">Fecha del Evento</label>
+            <input type="date" name = "fechaEvento" requered placeholder = "Fecha del evento">
+            
+            <button type = "submit">ENVIAR</button>
+        
+        </form>
+        <h2>Tus Eventos</h2>
+        <ul id ="listaEventos"></ul>
+
+       </main>
+       <script src="./main.js"></script>
+
+    </body>
+</html>
